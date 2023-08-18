@@ -1,0 +1,7 @@
+const heart = document.getElementById('heart');
+const message = document.getElementById('message');
+
+heart.addEventListener('click', () => {
+    heart.style.display = 'none';
+    message.style.display = 'block';
+});

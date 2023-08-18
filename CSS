@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffe0e0; /* Fondo rosa claro */
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+}
+
+.heart {
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    position: relative;
+    animation: pulse 1s infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 52px;
+    height: 80px;
+    border-radius: 50px 50px 0 0;
+    background: red; /* Corazón rojo */
+}
+
+.heart::before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.heart::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+.message {
+    background-color: #fff3f3; /* Fondo rosa claro para la carta */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.letter {
+    color: #f45c5c; /* Color bonito para las letras de la carta */
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+/* ... (código previo) */
+
+.heart:hover::before,
+.heart:hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 52px;
+    height: 80px;
+    border-radius: 50px 50px 0 0;
+    background: linear-gradient(135deg, #f45c5c, #ffcc00, #f45c5c); /* Cambio de colores */
+    animation: none; /* Detiene la animación en hover */
+}
+
+/* ... (código posterior) */
